@@ -49,3 +49,6 @@ python src/query_hitting.py
 python src/query_pitching.py
 
 streamlit run src/app.py
+
+## Live App (Public Deployment)
+https://leappn14-webscraping-dashboard-qnbdfeqzalkfdvp9kkpdgz.streamlit.app/
