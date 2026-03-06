@@ -1,9 +1,9 @@
 import pandas as pd
 
-# 1. Читаем уже очищенный файл
+# 1) read the cleaned leaderboard file
 df = pd.read_csv("data/cleaned/leaders_clean.csv")
 
-# 2. Список hitting статистик
+# 2) hitting statistics (whitelist)
 hitting_stats = [
     "Base on Balls",
     "Batting Average",
@@ -19,7 +19,7 @@ hitting_stats = [
     "Triples",
 ]
 
-# 3. Список pitching статистик
+# 3) pitching statistics (whitelist)
 pitching_stats = [
     "Complete Games",
     "ERA",
@@ -31,17 +31,17 @@ pitching_stats = [
     "Wins",
 ]
 
-# 4. Берём только hitting строки
+# 4) keep only hitting rows
 hitting_df = df[df["statistic"].isin(hitting_stats)]
 
-# 5. Берём только pitching строки
+# 5) keep only pitching rows
 pitching_df = df[df["statistic"].isin(pitching_stats)]
 
-# 6. Сохраняем в два новых CSV
+# 6) save to two separate CSV files
 hitting_df.to_csv("data/cleaned/leaders_hitting.csv", index=False)
 pitching_df.to_csv("data/cleaned/leaders_pitching.csv", index=False)
 
-# 7. Проверка
+# 7) quick check
 print("Hitting rows:", len(hitting_df))
 print("Pitching rows:", len(pitching_df))
 print("Saved -> data/cleaned/leaders_hitting.csv")
